@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{config('app.name' , 'LSAPP')}}</title>
+@extends('layout.app')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('content')
+<h1>{{$title}}</h1>
+<p>{{$body}}</p>
+<ul class="list-group">
+@if (count($types) > 0)
+    @foreach ($types as $type)
+        <li class="list-group-item">{{$type}}</li>
+    @endforeach
+    
+@endif
 
-       
-    </head>
-    <body>
-       
-       <h1>Welcome to laravel</h1>
-       <p>Gal is doin this</p>
+</ul>
     </body>
-</html>
+@endsection
