@@ -7,8 +7,9 @@
             <a class="nav-link" href="/lsapp/public/about">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+              <a class="nav-link" href="/lsapp/public/posts">Blog</a>
+            </li>
+          
                 </ul>
         
       </div>
