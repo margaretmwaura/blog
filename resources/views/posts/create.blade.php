@@ -6,6 +6,11 @@
         {{Form::label('title','Title')}}
         {{Form::text('title',' ')}}
     </div>
+    <div class ="form-group">
+        {{Form::label('title','Body')}}
+        {{Form::textarea('body',' ')}}
+    </div>
+    {{Form::submit('Submit')}}
 {!! Form::close() !!}
 @endsection
 

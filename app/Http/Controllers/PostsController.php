@@ -44,7 +44,19 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //start by validating
+
+        // the body and the title refer to the name given to the text area input in the form
+        $this->validate($request,[
+           'title' => 'required',
+           'body' => 'required'
+      ]);
+
+      $post = new Post;
+      $post->title = $request->input('title');
+      $post->body = $request->input('body');
+      $post -> save();
+      return redirect('/posts')->with('success' , 'the post was successfully created');
     }
 
     /**
