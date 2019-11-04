@@ -12,8 +12,20 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "laravelcollective/html": "^6.0"
-    },
+        "laravelcollective/html": "^6.0",
+        "UniSharp/laravel-ckeditor": "dev-patch-1#a5b24c9f7cc52db1ee976fc4586cae968f364c3c"
+},
+"repositories": 
+[
+{
+"type": "vcs",
+"url": "https://github.com/UniSharp/laravel-ckeditor.git"
+},
+{
+"type": "vcs",
+"url": "https://github.com/lloricode/laravel-ckeditor.git"
+}
+],
     "require-dev": {
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
@@ -21,6 +33,7 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0"
     },
+    
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
