@@ -66,6 +66,8 @@ section {
 
 body {
   margin: 0;
+  /* margin-top: 100dp; */
+  padding-top: 65px; 
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;

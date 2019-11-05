@@ -20,7 +20,7 @@ class PostsController extends Controller
         // $posts = Post::orderBy('title','desc')->take(1)->get();
         // $posts = DB::select('SELECT * FROM posts');
         // $posts = Post::orderBy('title','desc')->get();
-        $posts = Post::orderBy('title','desc')->paginate(1);
+        $posts = Post::orderBy('title','desc')->paginate(4);
         return view('posts.index') -> with('posts',$posts);
     }
 
@@ -80,7 +80,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+    
+        $post = Post::find($id);
+        return view('posts.edit') -> with('post',$post);
     }
 
     /**
@@ -93,6 +95,19 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+         //start by validating
+
+        // the body and the title refer to the name given to the text area input in the form
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required'
+       ]);
+ 
+       $post = Post::find($id);
+       $post->title = $request->input('title');
+       $post->body = $request->input('body');
+       $post -> save();
+       return redirect('/posts')->with('success' , 'Post was successfully updated');
     }
 
     /**
